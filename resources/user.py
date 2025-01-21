@@ -19,7 +19,6 @@ class UserRegister(MethodView):
     def post(self , user_data):
         # check for unique user name if not send it back :)
         user = UserModel.query.filter(UserModel.username == user_data["username"]).first()
-        user = UserModel(**user_data)
 
 
         if user:
